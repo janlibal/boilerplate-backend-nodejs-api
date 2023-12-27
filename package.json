@@ -14,7 +14,11 @@
     "coverage": "nyc report --reporter=json",
     "test": "cross-env ENV_FILE=./src/config/env/.env.test mocha -r ts-node/register --timeout 5000 --colors ./tests/**/*.spec.ts",
     "build": "tsc",
-    "start": "node ./dist/src/index.js"
+    "start": "node ./dist/src/index.js",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "author": "Jan Libal",
   "license": "ISC",
@@ -22,11 +26,20 @@
     "@types/node": "^20.10.5",
     "cross-env": "^7.0.3",
     "dotenv-extended": "^2.9.0",
-    "dotenv-parse-variables": "^2.0.0",
-    "typescript": "^5.3.3"
+    "dotenv-parse-variables": "^2.0.0"
   },
   "devDependencies": {
     "@types/dotenv-parse-variables": "^2.0.3",
-    "ts-node": "^10.9.2"
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.5.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }
