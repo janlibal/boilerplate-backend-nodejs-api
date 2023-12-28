@@ -20,6 +20,10 @@ async function generateAccessToken(userId: string) {
      return jwt.sign(payload, config.auth.secret, signOptions)
 }
 
+function comparePasswords(candidatePassword:string, userPassword:string) {
+    return bcrypt.compare(peperify(candidatePassword), userPassword)
+}
+
 function peperify(password: string) {
     return crypto.createHmac('sha1', config.auth.secret)
       .update(password)
@@ -29,5 +33,6 @@ function peperify(password: string) {
 
 export default {
     generateAccessToken,
-    hashPassword
+    hashPassword,
+    comparePasswords
 }
