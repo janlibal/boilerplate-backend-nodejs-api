@@ -45,6 +45,7 @@
     "pino": "^8.17.2"
   },
   "devDependencies": {
+    "@ngneat/falso": "^7.1.1",
     "@types/bcryptjs": "^2.4.6",
     "@types/dotenv-parse-variables": "^2.0.3",
     "@types/jsonwebtoken": "^9.0.5",

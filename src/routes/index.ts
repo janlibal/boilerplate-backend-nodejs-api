@@ -9,6 +9,7 @@ import userRoutes from './userRoutes'
 api.use(testRoutes)
 api.use(userRoutes)
 
+
 router.use('/api/v1', api.routes())
   
 
