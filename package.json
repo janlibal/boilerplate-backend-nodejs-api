@@ -8,6 +8,12 @@
     "node": ">=14.0.0"
   },
   "scripts": {
+    "migration:make": "knex migrate:make --knexfile ./src/database/knexfile.ts",
+    "db-dev:migrate": "knex migrate:latest --env development --knexfile ./src/database/knexfile.ts",
+    "db-test:migrate": "knex migrate:latest --env test --knexfile ./src/database/knexfile.ts",
+    "seed:make": "knex seed:make --knexfile ./src/database/knexfile.ts",
+    "db-dev:seed": "knex seed:run --env development --knexfile ./src/database/knexfile.ts",
+    "db-test:seed": "knex seed:run --env test --knexfile ./src/database/knexfile.ts",
     "dev": "cross-env ENV_FILE=./src/config/env/.env.dev nodemon",
     "prod": "cross-env ENV_FILE=./src/config/env/.env.prod nodemon",
     "staging": "cross-env ENV_FILE=./src/config/env/.env.staging ts-node-dev --poll --respawn --transpile-only ./src/index.ts",
@@ -42,7 +48,8 @@
     "lodash": "^4.17.21",
     "objection": "^3.1.3",
     "pg": "^8.11.3",
-    "pino": "^8.17.2"
+    "pino": "^8.17.2",
+    "supertest": "^6.3.3"
   },
   "devDependencies": {
     "@ngneat/falso": "^7.1.1",
